@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Mo qw(build is);
-use Mo::utils qw(check_isa check_number check_required);
+use Mo::utils qw(check_array_object check_isa check_number check_required);
 
 our $VERSION = 0.01;
 
@@ -24,6 +24,11 @@ has password_hash => (
 	is => 'ro',
 );
 
+has roles => (
+	default => [],
+	is => 'ro',
+);
+
 sub BUILD {
 	my $self = shift;
 
@@ -39,6 +44,9 @@ sub BUILD {
 
 	# Check password_hash.
 	check_required($self, 'password_hash');
+
+	# Check roles.
+	check_array_object($self, 'roles', 'Data::Login::Role', 'Roles');
 
 	return;
 }
