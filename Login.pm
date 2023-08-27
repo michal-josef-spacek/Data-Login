@@ -12,7 +12,7 @@ has hash_type => (
 	is => 'ro',
 );
 
-has login_id => (
+has id => (
 	is => 'ro',
 );
 
@@ -31,8 +31,8 @@ sub BUILD {
 	check_isa($self, 'hash_type', 'Data::HashType');
 	check_required($self, 'hash_type');
 
-	# Check login id.
-	check_number($self, 'login_id');
+	# Check id.
+	check_number($self, 'id');
 
 	# Check login_name.
 	check_required($self, 'login_name');
