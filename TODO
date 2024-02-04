@@ -1,6 +1,5 @@
 TODO
 ====
-1. Doc for Data::Login.
 2. Doc for Data::Login::Role
 3. Tests for Data::Login.
 4. Tests for Data::Login::Role.
@@ -8,3 +7,5 @@ TODO
 
 Applied
 =======
+1. Doc for Data::Login.
+OK [20240204] skim
