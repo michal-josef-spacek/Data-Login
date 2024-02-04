@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Mo qw(build is);
-use Mo::utils qw(check_array_object check_isa check_number check_required);
+use Mo::utils 0.21 qw(check_array_object check_isa check_length check_number check_required);
 
 our $VERSION = 0.01;
 
@@ -40,9 +40,11 @@ sub BUILD {
 	check_number($self, 'id');
 
 	# Check login_name.
+	check_length($self, 'login_name', 50);
 	check_required($self, 'login_name');
 
 	# Check password_hash.
+	check_length($self, 'password_hash', 128);
 	check_required($self, 'password_hash');
 
 	# Check roles.
