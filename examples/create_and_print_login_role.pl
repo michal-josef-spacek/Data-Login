@@ -17,4 +17,6 @@ print 'Id: '.$obj->id."\n";
 print 'Role: '.$obj->role."\n";
 
 # Output:
-# TODO
+# Active flag: 1
+# Id: 2
+# Role: admin
