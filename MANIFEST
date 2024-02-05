@@ -1,6 +1,7 @@
 Changes
 CONCEPT
 examples/create_and_print_login.pl
+examples/create_and_print_login_role.pl
 inc/Module/Install.pm
 inc/Module/Install/AuthorRequires.pm
 inc/Module/Install/AuthorTests.pm
