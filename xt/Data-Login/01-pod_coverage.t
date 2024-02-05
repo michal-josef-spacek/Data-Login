@@ -5,4 +5,6 @@ use Test::NoWarnings;
 use Test::Pod::Coverage 'tests' => 2;
 
 # Test.
-pod_coverage_ok('Data::Login', 'Data::Login is covered.');
+pod_coverage_ok('Data::Login',
+	{ 'also_private' => ['BUILD'] },
+	'Data::Login is covered.');
