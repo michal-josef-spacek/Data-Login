@@ -24,6 +24,11 @@ t/Data-Login-Role/02-version.t
 t/Data-Login/01-use.t
 t/Data-Login/02-version.t
 t/Data-Login/03-new.t
+t/Data-Login/04-hash_type.t
+t/Data-Login/05-id.t
+t/Data-Login/06-login_name.t
+t/Data-Login/07-password_hash.t
+t/Data-Login/08-roles.t
 xt/Data-Login-Role/01-pod_coverage.t
 xt/Data-Login-Role/02-pod.t
 xt/Data-Login/01-pod_coverage.t
