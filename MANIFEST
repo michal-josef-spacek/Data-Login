@@ -21,6 +21,10 @@ META.yml
 README
 t/Data-Login-Role/01-use.t
 t/Data-Login-Role/02-version.t
+t/Data-Login-Role/03-new.t
+t/Data-Login-Role/04-active.t
+t/Data-Login-Role/05-id.t
+t/Data-Login-Role/06-role.t
 t/Data-Login/01-use.t
 t/Data-Login/02-version.t
 t/Data-Login/03-new.t
