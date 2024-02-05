@@ -3,7 +3,7 @@ package Data::Login;
 use strict;
 use warnings;
 
-use Mo qw(build is);
+use Mo qw(build default is);
 use Mo::utils 0.21 qw(check_array_object check_isa check_length check_number check_required);
 
 our $VERSION = 0.01;
