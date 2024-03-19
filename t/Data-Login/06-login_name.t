@@ -3,14 +3,19 @@ use warnings;
 
 use Data::HashType;
 use Data::Login;
+use DateTime;
 use Test::More 'tests' => 2;
 use Test::NoWarnings;
 
 # Test.
 my $obj = Data::Login->new(
 	'hash_type' => Data::HashType->new(
-		'active' => 1,
 		'name' => 'sha256',
+		'valid_from' => DateTime->new(
+			'day' => 1,
+			'month' => 1,
+			'year' => 2024,
+		),
 	),
 	'login_name' => 'skim',
 	# foobar

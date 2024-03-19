@@ -3,6 +3,7 @@ use warnings;
 
 use Data::HashType;
 use Data::Login;
+use DateTime;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::More 'tests' => 5;
@@ -11,8 +12,12 @@ use Test::NoWarnings;
 # Test.
 my $obj = Data::Login->new(
 	'hash_type' => Data::HashType->new(
-		'active' => 1,
 		'name' => 'sha256',
+		'valid_from' => DateTime->new(
+			'day' => 1,
+			'month' => 1,
+			'year' => 2024,
+		),
 	),
 	'login_name' => 'skim',
 	# foobar
@@ -36,8 +41,12 @@ clean();
 eval {
 	Data::Login->new(
 		'hash_type' => Data::HashType->new(
-			'active' => 1,
 			'name' => 'sha256',
+			'valid_from' => DateTime->new(
+				'day' => 1,
+				'month' => 1,
+				'year' => 2024,
+			),
 		),
 		# foobar
 		'password_hash' => 'aec070645fe53ee3b3763059376134f058cc337247c978add178b6ccdfb0019f',
@@ -51,8 +60,12 @@ clean();
 eval {
 	Data::Login->new(
 		'hash_type' => Data::HashType->new(
-			'active' => 1,
 			'name' => 'sha256',
+			'valid_from' => DateTime->new(
+				'day' => 1,
+				'month' => 1,
+				'year' => 2024,
+			),
 		),
 		'login_name' => 'skim',
 	);

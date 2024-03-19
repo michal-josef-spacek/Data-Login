@@ -3,14 +3,19 @@ use warnings;
 
 use Data::HashType;
 use Data::Login;
+use DateTime;
 use Test::More 'tests' => 4;
 use Test::NoWarnings;
 
 # Test.
 my $obj = Data::Login->new(
 	'hash_type' => Data::HashType->new(
-		'active' => 1,
 		'name' => 'sha256',
+		'valid_from' => DateTime->new(
+			'day' => 1,
+			'month' => 1,
+			'year' => 2024,
+		),
 	),
 	'login_name' => 'skim',
 	# foobar
@@ -21,8 +26,12 @@ is($obj->id, undef, 'Get id (undef - default).');
 # Test.
 $obj = Data::Login->new(
 	'hash_type' => Data::HashType->new(
-		'active' => 1,
 		'name' => 'sha256',
+		'valid_from' => DateTime->new(
+			'day' => 1,
+			'month' => 1,
+			'year' => 2024,
+		),
 	),
 	'id' => 777,
 	'login_name' => 'skim',
@@ -34,8 +43,12 @@ is($obj->id, 777, 'Get id (777).');
 # Test.
 $obj = Data::Login->new(
 	'hash_type' => Data::HashType->new(
-		'active' => 1,
 		'name' => 'sha256',
+		'valid_from' => DateTime->new(
+			'day' => 1,
+			'month' => 1,
+			'year' => 2024,
+		),
 	),
 	'id' => undef,
 	'login_name' => 'skim',
