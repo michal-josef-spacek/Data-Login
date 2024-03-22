@@ -5,7 +5,7 @@ use Data::Login::Role;
 use DateTime;
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 7;
+use Test::More 'tests' => 6;
 use Test::NoWarnings;
 
 # Test.
@@ -21,7 +21,6 @@ isa_ok($obj, 'Data::Login::Role');
 
 # Test.
 $obj = Data::Login::Role->new(
-	'active' => 1,
 	'id' => 777,
 	'role' => 'admin',
 	'valid_from' => DateTime->new(
@@ -36,22 +35,6 @@ $obj = Data::Login::Role->new(
 	),
 );
 isa_ok($obj, 'Data::Login::Role');
-
-# Test.
-eval {
-	Data::Login::Role->new(
-		'active' => 'bad',
-		'role' => 'admin',
-		'valid_from' => DateTime->new(
-			'year' => 2024,
-			'month' => 1,
-			'day' => 1,
-		),
-	);
-};
-is($EVAL_ERROR, "Parameter 'active' must be a bool (0/1).\n",
-	"Parameter 'active' must be a bool (0/1) (bad).");
-clean();
 
 # Test.
 eval {

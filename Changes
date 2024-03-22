@@ -1,4 +1,5 @@
 0.04
+ - API CHANGE: Remove 'active' parameter from Data::Login::Role.
  - Update usage of Data::HashType to 0.05 version.
 
 0.03 2024-03-22T14:37:07+01:00
