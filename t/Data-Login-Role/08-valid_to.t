@@ -15,28 +15,21 @@ my $obj = Data::Login::Role->new(
 		'day' => 1,
 	),
 );
-is($obj->active, 1, 'Get active (1 - default).');
+is($obj->valid_to, undef, 'Get valid to (undef - default).');
 
 # Test.
 $obj = Data::Login::Role->new(
-	'active' => 1,
 	'role' => 'admin',
 	'valid_from' => DateTime->new(
 		'year' => 2024,
 		'month' => 1,
 		'day' => 1,
 	),
-);
-is($obj->active, 1, 'Get active (1).');
-
-# Test.
-$obj = Data::Login::Role->new(
-	'active' => 0,
-	'role' => 'admin',
-	'valid_from' => DateTime->new(
+	'valid_to' => DateTime->new(
 		'year' => 2024,
-		'month' => 1,
-		'day' => 1,
+		'month' => 12,
+		'day' => 31,
 	),
 );
-is($obj->active, 0, 'Get active (0).');
+isa_ok($obj->valid_to, 'DateTime');
+is($obj->valid_to->ymd, '2024-12-31', 'Get valid to (2024-12-31).');

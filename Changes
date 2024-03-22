@@ -1,5 +1,8 @@
 0.03
  - API CHANGE: Add 'valid_from' and 'valid_to' parameters to Data::Login.
+ - API CHANGE: Add 'valid_from' and 'valid_to' parameters to
+   Data::Login::Role. 'active' parameter will be removed in future. And
+   'valid_from' will be required in future.
 
 0.02 2024-03-19T14:01:19+01:00
  - Regen example file.

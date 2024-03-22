@@ -1,6 +1,5 @@
 TODO
 ====
-5. Add 'valid_from' and 'valid_to' parameters.
 6.
 
 Applied
@@ -16,3 +15,6 @@ OK [20240205] skim
 
 2. Doc for Data::Login::Role
 OK [20240205] skim
+
+5. Add 'valid_from' and 'valid_to' parameters.
+OK [20240322] skim

@@ -15,16 +15,5 @@ my $obj = Data::Login::Role->new(
 		'day' => 1,
 	),
 );
-is($obj->id, undef, 'Get id (undef - default).');
-
-# Test.
-$obj = Data::Login::Role->new(
-	'id' => 10,
-	'role' => 'admin',
-	'valid_from' => DateTime->new(
-		'year' => 2024,
-		'month' => 1,
-		'day' => 1,
-	),
-);
-is($obj->id, 10, 'Get id (10).');
+isa_ok($obj->valid_from, 'DateTime');
+is($obj->valid_from->ymd, '2024-01-01', 'Get valid from (2024-01-01).');

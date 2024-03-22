@@ -50,6 +50,11 @@ $obj = Data::Login->new(
 		Data::Login::Role->new(
 			'id' => 1,
 			'role' => 'admin',
+			'valid_from' => DateTime->new(
+				'year' => 2024,
+				'month' => 2,
+				'day' => 1,
+			),
 		),
 	],
 	'valid_from' => DateTime->new(
