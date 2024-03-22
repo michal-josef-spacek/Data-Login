@@ -4,7 +4,7 @@ use warnings;
 use Data::HashType;
 use Data::Login;
 use DateTime;
-use Test::More 'tests' => 2;
+use Test::More 'tests' => 3;
 use Test::NoWarnings;
 
 # Test.
@@ -26,4 +26,5 @@ my $obj = Data::Login->new(
 		'day' => 1,
 	),
 );
-isa_ok($obj->hash_type, 'Data::HashType');
+isa_ok($obj->valid_from, 'DateTime');
+is($obj->valid_from->ymd, '2024-01-01', 'Get valid from in ymd format (2024-01-01).');

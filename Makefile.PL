@@ -18,6 +18,8 @@ name 'Data-Login';
 perl_version 5.008;
 readme_from 'Login.pm';
 recursive_author_tests('xt');
+requires 'DateTime' => 0;
+requires 'Error::Pure' => 0;
 requires 'Mo' => 0;
 requires 'Mo::utils' => 0.21;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Data-Login/issues';
