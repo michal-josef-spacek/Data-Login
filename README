@@ -13,6 +13,16 @@ SYNOPSIS
      my $valid_from = $obj->valid_from;
      my $valid_to = $obj->valid_to;
 
+DESCRIPTION
+    The intention of this module is to store information about the user
+    logins. User logins are active only within a certain time range, and we
+    need a mechanism to transition to others.
+
+    A real-world example is a database table that follows the same format as
+    this data object, with multiple records being valid at different times,
+    e.g. for transfering of Digest from obsolete version to new. Or planning
+    of access to system from concrete date.
+
 METHODS
   "new"
      my $obj = Data::Login->new(%params);
