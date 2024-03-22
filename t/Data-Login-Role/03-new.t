@@ -5,7 +5,7 @@ use Data::Login::Role;
 use DateTime;
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 6;
+use Test::More 'tests' => 7;
 use Test::NoWarnings;
 
 # Test.
@@ -54,10 +54,26 @@ clean();
 
 # Test.
 eval {
-	Data::Login::Role->new;
+	Data::Login::Role->new(
+		'valid_from' => DateTime->new(
+			'year' => 2024,
+			'month' => 1,
+			'day' => 1,
+		),
+	);
 };
 is($EVAL_ERROR, "Parameter 'role' is required.\n",
 	"Parameter 'role' is required.");
+clean();
+
+# Test.
+eval {
+	Data::Login::Role->new(
+		'role' => 'admin',
+	);
+};
+is($EVAL_ERROR, "Parameter 'valid_from' is required.\n",
+	"Parameter 'valid_from' is required.");
 clean();
 
 # Test.

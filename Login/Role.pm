@@ -38,6 +38,7 @@ sub BUILD {
 
 	# Check valid_from.
 	check_isa($self, 'valid_from', 'DateTime');
+	check_required($self, 'valid_from');
 
 	# Check valid_to.
 	check_isa($self, 'valid_to', 'DateTime');
@@ -105,7 +106,7 @@ compatibility.>
 
 Date and time of start of use.
 Must be a L<DateTime> object.
-It's optional.
+It's required.
 
 =item * C<valid_to>
 
@@ -157,6 +158,7 @@ Returns L<DateTime> object or undef.
          Parameter 'role' has length greater than '100'.
                  Value: %s
          Parameter 'role' is required.
+         Parameter 'valid_from' is required.
          Parameter 'valid_from' must be a 'DateTime' object.
                  Value: %s
                  Reference: %s
