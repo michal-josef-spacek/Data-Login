@@ -8,7 +8,7 @@ use Error::Pure qw(err);
 use Mo qw(build default is);
 use Mo::utils 0.28 qw(check_isa check_length check_number_id check_required);
 
-our $VERSION = 0.04;
+our $VERSION = 0.05;
 
 has id => (
 	is => 'ro',
@@ -230,6 +230,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.04
+0.05
 
 =cut
