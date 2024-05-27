@@ -5,7 +5,7 @@ use Data::Login::Role;
 use DateTime;
 use English;
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 7;
+use Test::More 'tests' => 8;
 use Test::NoWarnings;
 
 # Test.
@@ -89,4 +89,24 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'role' has length greater than '100'.\n",
 	"Parameter 'role' has length greater than '100'.");
+clean();
+
+# Test.
+eval {
+	Data::Login::Role->new(
+		'role' => 'admin',
+		'valid_from' => DateTime->new(
+			'day' => 1,
+			'month' => 1,
+			'year' => 2024,
+		),
+		'valid_to' => DateTime->new(
+			'day' => 1,
+			'month' => 1,
+			'year' => 2023,
+		),
+	);
+};
+is($EVAL_ERROR, "Parameter 'valid_to' must be older than 'valid_from' parameter.\n",
+	"Parameter 'valid_to' must be older than 'valid_from' parameter.");
 clean();

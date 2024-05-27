@@ -2,6 +2,7 @@
  - API CHANGE: Remove 'active' parameter from Data::Login::Role.
  - API CHANGE: Parameter 'valid_from' is required in Data::Login::Role.
  - Add test for Data::Login constructor.
+ - Add tests for valid_to < valid_from.
  - Rewrite checks for id to check_number_id().
  - Update usage of Data::HashType to 0.05 version.
 
