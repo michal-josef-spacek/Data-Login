@@ -6,7 +6,7 @@ use warnings;
 use DateTime;
 use Error::Pure qw(err);
 use Mo qw(build default is);
-use Mo::utils 0.21 qw(check_array_object check_isa check_length check_number check_required);
+use Mo::utils 0.28 qw(check_array_object check_isa check_length check_number_id check_required);
 
 our $VERSION = 0.04;
 
@@ -47,7 +47,7 @@ sub BUILD {
 	check_required($self, 'hash_type');
 
 	# Check id.
-	check_number($self, 'id');
+	check_number_id($self, 'id');
 
 	# Check login_name.
 	check_length($self, 'login_name', 50);
@@ -235,7 +235,7 @@ Returns L<DateTime> object or undef.
          Parameter 'hash_type' must be a 'Data::HashType' object.
                  Value: %s
                  Reference: %s
-         Parameter 'id' must be a number.
+         Parameter 'id' must be a natural number.
                  Value: %s
          Parameter 'login_name' has length greater than '50'.
                  Value: %s

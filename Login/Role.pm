@@ -6,7 +6,7 @@ use warnings;
 use DateTime;
 use Error::Pure qw(err);
 use Mo qw(build default is);
-use Mo::utils qw(check_isa check_length check_number check_required);
+use Mo::utils 0.28 qw(check_isa check_length check_number_id check_required);
 
 our $VERSION = 0.04;
 
@@ -30,7 +30,7 @@ sub BUILD {
 	my $self = shift;
 
 	# Check id.
-	check_number($self, 'id');
+	check_number_id($self, 'id');
 
 	# Check role.
 	check_length($self, 'role', '100');
@@ -153,7 +153,7 @@ Returns L<DateTime> object or undef.
 =head1 ERRORS
 
  new():
-         Parameter 'id' must be a number.
+         Parameter 'id' must be a natural number.
                  Value: %s
          Parameter 'role' has length greater than '100'.
                  Value: %s

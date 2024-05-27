@@ -122,7 +122,7 @@ ERRORS
              Parameter 'hash_type' must be a 'Data::HashType' object.
                      Value: %s
                      Reference: %s
-             Parameter 'id' must be a number.
+             Parameter 'id' must be a natural number.
                      Value: %s
              Parameter 'login_name' has length greater than '50'.
                      Value: %s

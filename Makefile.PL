@@ -21,7 +21,7 @@ recursive_author_tests('xt');
 requires 'DateTime' => 0;
 requires 'Error::Pure' => 0;
 requires 'Mo' => 0;
-requires 'Mo::utils' => 0.21;
+requires 'Mo::utils' => 0.28;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Data-Login/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/Data-Login';
 resources 'repository' => 'git://github.com/michal-josef-spacek/Data-Login';
