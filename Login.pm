@@ -6,7 +6,8 @@ use warnings;
 use DateTime;
 use Error::Pure qw(err);
 use Mo qw(build default is);
-use Mo::utils 0.28 qw(check_array_object check_isa check_length check_number_id check_required);
+use Mo::utils 0.28 qw(check_isa check_length check_number_id check_required);
+use Mo::utils::Array qw(check_array_object);
 
 our $VERSION = 0.05;
 
@@ -58,7 +59,7 @@ sub BUILD {
 	check_required($self, 'password_hash');
 
 	# Check roles.
-	check_array_object($self, 'roles', 'Data::Login::Role', 'Roles');
+	check_array_object($self, 'roles', 'Data::Login::Role');
 
 	# Check valid_from.
 	check_required($self, 'valid_from');
@@ -231,34 +232,38 @@ Returns L<DateTime> object or undef.
 =head1 ERRORS
 
  new():
-         Parameter 'hash_type' is required.
-         Parameter 'hash_type' must be a 'Data::HashType' object.
-                 Value: %s
-                 Reference: %s
-         Parameter 'id' must be a natural number.
-                 Value: %s
-         Parameter 'login_name' has length greater than '50'.
-                 Value: %s
-         Parameter 'login_name' is required.
-         Parameter 'password_hash' has length greater than '128'.
-                 Value: %s
-         Parameter 'password_hash' is required.
-         Parameter 'roles' must be a array.
-                 Value: %s
-                 Reference: %s
-         Parameter 'valid_from' is required.
-         Parameter 'valid_from' must be a 'DateTime' object.
-                 Value: %s
-                 Reference: %s
-         Parameter 'valid_to' must be a 'DateTime' object.
-                 Value: %s
-                 Reference: %s
-         Parameter 'valid_to' must be older than 'valid_from' parameter.
-                 Value: %s
-                 Valid from: %s
-         Roles isn't 'Data::Login::Role' object.
-                 Value: %s
-                 Reference: %s
+         From Mo::utils:
+                 Parameter 'hash_type' is required.
+                 Parameter 'hash_type' must be a 'Data::HashType' object.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'id' must be a natural number.
+                         Value: %s
+                 Parameter 'login_name' has length greater than '50'.
+                         Value: %s
+                 Parameter 'login_name' is required.
+                 Parameter 'password_hash' has length greater than '128'.
+                         Value: %s
+                 Parameter 'password_hash' is required.
+                 Parameter 'valid_from' is required.
+                 Parameter 'valid_from' must be a 'DateTime' object.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'valid_to' must be a 'DateTime' object.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'valid_to' must be older than 'valid_from' parameter.
+                         Value: %s
+                         Valid from: %s
+
+         From Mo::utils::Array::check_array_object():
+                 Parameter 'roles' must be a array.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'roles' with array must contain 'Data::Login::Role' objects.
+                         Value: %s
+                         Reference: %s
+
 
 =head1 EXAMPLE
 
@@ -352,7 +357,8 @@ Returns L<DateTime> object or undef.
 L<DateTime>,
 L<Error::Pure>,
 L<Mo>,
-L<Mo::utils>.
+L<Mo::utils>,
+L<Mo::utils::Array>.
 
 =head1 REPOSITORY
 

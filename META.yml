@@ -31,6 +31,7 @@ requires:
   Error::Pure: 0
   Mo: 0
   Mo::utils: 0.28
+  Mo::utils::Array: 0
   perl: 5.8.0
 resources:
   bugtracker: https://github.com/michal-josef-spacek/Data-Login/issues
