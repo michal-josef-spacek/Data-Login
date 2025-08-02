@@ -6,8 +6,9 @@ use warnings;
 use DateTime;
 use Error::Pure qw(err);
 use Mo qw(build default is);
-use Mo::utils 0.28 qw(check_isa check_length check_number_id check_required);
+use Mo::utils 0.28 qw(check_isa check_length check_required);
 use Mo::utils::Array qw(check_array_object);
+use Mo::utils::Number qw(check_positive_natural);
 
 our $VERSION = 0.05;
 
@@ -48,7 +49,7 @@ sub BUILD {
 	check_required($self, 'hash_type');
 
 	# Check id.
-	check_number_id($self, 'id');
+	check_positive_natural($self, 'id');
 
 	# Check login_name.
 	check_length($self, 'login_name', 50);
@@ -237,8 +238,6 @@ Returns L<DateTime> object or undef.
                  Parameter 'hash_type' must be a 'Data::HashType' object.
                          Value: %s
                          Reference: %s
-                 Parameter 'id' must be a natural number.
-                         Value: %s
                  Parameter 'login_name' has length greater than '50'.
                          Value: %s
                  Parameter 'login_name' is required.
@@ -263,6 +262,10 @@ Returns L<DateTime> object or undef.
                  Parameter 'roles' with array must contain 'Data::Login::Role' objects.
                          Value: %s
                          Reference: %s
+
+         From Mo::utils::Number::check_positive_natural():
+                 Parameter 'id' must be a positive natural number.
+                         Value: %s
 
 
 =head1 EXAMPLE
@@ -358,7 +361,8 @@ L<DateTime>,
 L<Error::Pure>,
 L<Mo>,
 L<Mo::utils>,
-L<Mo::utils::Array>.
+L<Mo::utils::Array>,
+L<Mo::utils::Number>.
 
 =head1 REPOSITORY
 

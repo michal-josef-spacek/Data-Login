@@ -123,8 +123,6 @@ ERRORS
                      Parameter 'hash_type' must be a 'Data::HashType' object.
                              Value: %s
                              Reference: %s
-                     Parameter 'id' must be a natural number.
-                             Value: %s
                      Parameter 'login_name' has length greater than '50'.
                              Value: %s
                      Parameter 'login_name' is required.
@@ -149,6 +147,10 @@ ERRORS
                      Parameter 'roles' with array must contain 'Data::Login::Role' objects.
                              Value: %s
                              Reference: %s
+
+             From Mo::utils::Number::check_positive_natural():
+                     Parameter 'id' must be a positive natural number.
+                             Value: %s
 
 EXAMPLE
      use strict;
@@ -235,7 +237,8 @@ EXAMPLE
      # Valid from: 2024-01-01
 
 DEPENDENCIES
-    DateTime, Error::Pure, Mo, Mo::utils, Mo::utils::Array.
+    DateTime, Error::Pure, Mo, Mo::utils, Mo::utils::Array,
+    Mo::utils::Number.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Data-Login>

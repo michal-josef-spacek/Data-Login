@@ -23,6 +23,7 @@ requires 'Error::Pure' => 0;
 requires 'Mo' => 0;
 requires 'Mo::utils' => 0.28;
 requires 'Mo::utils::Array' => 0;
+requires 'Mo::utils::Number' => 0;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Data-Login/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/Data-Login';
 resources 'repository' => 'git://github.com/michal-josef-spacek/Data-Login';
