@@ -9,7 +9,7 @@ use Mo qw(build default is);
 use Mo::utils 0.28 qw(check_isa check_length check_required);
 use Mo::utils::Number qw(check_positive_natural);
 
-our $VERSION = 0.05;
+our $VERSION = 0.06;
 
 has id => (
 	is => 'ro',
@@ -235,6 +235,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.05
+0.06
 
 =cut
