@@ -275,7 +275,7 @@ Returns L<DateTime> object or undef.
  use Data::HashType;
  use Data::Login;
  use Data::Login::Role;
- use Data::Random::Utils qw(is_valid);
+ use Data::Random::Utils 0.02 qw(is_object_currently_valid);
  use DateTime;
 
  my $obj = Data::Login->new(
@@ -338,7 +338,7 @@ Returns L<DateTime> object or undef.
  print 'Login name: '.$obj->login_name."\n";
  print 'Password hash: '.$obj->password_hash."\n";
  print "Active roles:\n";
- print join "\n", map { is_valid($_) ? ' - '.$_->role : () } @{$obj->roles};
+ print join "\n", map { is_object_currently_valid($_) ? ' - '.$_->role : () } @{$obj->roles};
  print "\n";
  print 'Valid from: '.$obj->valid_from->ymd."\n";
 

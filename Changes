@@ -1,4 +1,5 @@
 0.05
+ - Fix example in doc.
  - Move check_array_object() to Mo::utils::Array.
  - Update copyright years.
 
